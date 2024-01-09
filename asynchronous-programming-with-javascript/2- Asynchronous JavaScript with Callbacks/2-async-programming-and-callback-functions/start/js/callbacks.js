@@ -39,11 +39,13 @@ function generateHTML(data) {
     }
 }
 
-btn.addEventListener('click', () => {
-    getJSON(astrosUrl, (json) => {
-        console.log(json.people);
-        json.people.map((person) => {
-            getJSON(wikiUrl + person.name, generateHTML);
-        });
+function getProfiles(json) {
+    json.people.map((person) => {
+        getJSON(wikiUrl + person.name, generateHTML);
     });
+}
+
+btn.addEventListener('click', (e) => {
+    getJSON(astrosUrl, getProfiles);
+    e.target.remove();
 });
