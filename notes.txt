@@ -6,3 +6,5 @@ How AJAX Works:
 2. Create a callback function.
 3. Open a request.
 4. Send the request
+
+for each AJAX request, we should create a new object

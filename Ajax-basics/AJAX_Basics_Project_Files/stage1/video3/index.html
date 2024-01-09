@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/main.css">
-  <title>AJAX with JavaScript</title>
-  <script>
- 
-  </script>
-</head>
-<body>
-  <div class="grid-container centered">
-    <div class="grid-100">
-      <div class="contained">
-        <div class="grid-100">
-          <div class="heading">
-            <h1>Bring on the AJAX</h1>
-          </div>
-          <ul id="ajax">
-
-          </ul>
+    <head>
+        <meta charset="utf-8" />
+        <link
+            href="//fonts.googleapis.com/css?family=Varela+Round"
+            rel="stylesheet"
+            type="text/css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <title>AJAX with JavaScript</title>
+        <script>
+            let xhr = new XMLHttpRequest(); //1. create request
+            xhr.onreadystatechange = function () {
+                //2. create callback function
+                if (xhr.readyState === 4) {
+                    document.getElementById('ajax').innerHTML =
+                        xhr.responseText;
+                }
+            };
+            xhr.open('GET', 'sidebar.html'); // 3. ready to request but not sent yet.
+            xhr.send(); //4. send request
+        </script>
+    </head>
+    <body>
+        <div class="grid-container centered">
+            <div class="grid-100">
+                <div class="contained">
+                    <div class="grid-100">
+                        <div class="heading">
+                            <h1>Bring on the AJAX</h1>
+                        </div>
+                        <ul id="ajax"></ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</body>
+    </body>
 </html>
