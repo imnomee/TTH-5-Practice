@@ -8,7 +8,8 @@ function bringFromAPI() {
     xhr.open('GET', 'https://api.github.com/users', true);
     xhr.onload = function () {
         if (xhr.status === 200) {
-            console.log(JSON.parse(xhr.responseText));
+            const users = JSON.parse(xhr.responseText);
+            users.forEach((user) => console.log(user.login));
         }
     };
     xhr.send();
