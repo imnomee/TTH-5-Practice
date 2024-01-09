@@ -1,5 +1,6 @@
 AJAX: Asynch Javascript and XML
 XML: Extensible Markup Language
+JSON: Javascript Object Notation
 
 AJAX lets you update html without loading a new page.
 

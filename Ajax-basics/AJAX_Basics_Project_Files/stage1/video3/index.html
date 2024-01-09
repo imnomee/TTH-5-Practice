@@ -20,16 +20,6 @@
                         alert(xhr.statusText);
                     }
                 }
-                // if (xhr.readyState === 4) {
-                //     if (xhr.status === 200) {
-                //         document.getElementById('ajax').innerHTML =
-                //             xhr.responseText;
-                //     } else if (xhr.status === 404) {
-                //         //file not found
-                //     } else if (xhr.status === 500) {
-                //         //server issue
-                //     }
-                // }
             };
             xhr.open('GET', 'sidebar.html'); // 3. ready to request but not sent yet.
             xhr.send(); //4. send request
