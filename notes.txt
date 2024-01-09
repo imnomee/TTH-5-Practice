@@ -104,3 +104,18 @@ finally(() => event.target.remove())
 Fetch API
 
 fetch('api.com')
+
+=================
+async await
+async function fetchData(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    return data;
+}
+
+1. await keyword pauses the execution of an async function and wait for the resolution of promise
+2. resumes execution and returns the resolved value
+3. pausing the execution will not cause any blocking behaviour
+4. await is only valid inside functions marked with async
+5. await outside the async will cause syntax error
