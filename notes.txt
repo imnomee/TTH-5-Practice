@@ -98,3 +98,7 @@ Working with promises is a three steps sequence.
 After the value is availble to consume:
 then()
 catch()
+finally(() => event.target.remove())
+
+================
+Fetch API
