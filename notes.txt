@@ -1,0 +1,2 @@
+AJAX: Asynch Javascript and XML
+AJAX lets you update html without loading a new page.
