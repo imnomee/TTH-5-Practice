@@ -80,3 +80,21 @@ www.myserver.com cant get data from db.myserver.com
 =================
 Another common way to access other info is JSONP
 JSONP: JSON with Padding
+
+================
+Difference Between callbacks and promises
+Promise represents a value that can be handled at some point later.
+
+Promise is always going to be in one of three states:
+1. Pending - the default waiting state of a promise 
+2. Fulfilled - The operation completed successfully
+3. Rejected - The operation failed.
+
+Working with promises is a three steps sequence.
+1. Create a promise using the Promise() Constructor
+2. Define what should happend when the promise is fulfilled or Rejected
+3. Use the value of fulfilled promise or provide a rejection reason for rejected promise. 
+
+After the value is availble to consume:
+then()
+catch()
