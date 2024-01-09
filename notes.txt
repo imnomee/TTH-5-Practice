@@ -1,4 +1,6 @@
 AJAX: Asynch Javascript and XML
+XML: Extensible Markup Language
+
 AJAX lets you update html without loading a new page.
 
 How AJAX Works:
@@ -8,3 +10,37 @@ How AJAX Works:
 4. Send the request
 
 for each AJAX request, we should create a new object
+=======================
+let xhr = new XMLHttpRequest(); //1. create request
+            xhr.onreadystatechange = function () {
+                //2. create callback function
+                if (xhr.readyState === 4) {
+                    document.getElementById('ajax').innerHTML =
+                        xhr.responseText;
+                }
+            };
+            xhr.open('GET', 'sidebar.html'); // 3. ready to request but not sent yet.
+            xhr.send(); //4. send request
+
+======================
+The GET method is a simple way to send data to a web server.
+downside:
+all of data is sent in the url
+like: Social Sec, Password, DOB
+This is the most secure system.
+----------------------
+Thats why HTTP offers the POST method
+Post sends data in the body of request and not in the URL
+================
+
+web servers usually reply to the AJAX requests in text format
+
+Limitations:
+AJAX works on the same server.
+it cannot request data from the other server.
+it won't allow from http to https
+switching from one port 80 to another port 8888
+www.myserver.com cant get data from db.myserver.com
+=================
+Another common way to access other info is JSONP
+JSONP: JSON with Padding
