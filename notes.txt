@@ -95,6 +95,14 @@ Working with promises is a three steps sequence.
 2. Define what should happend when the promise is fulfilled or Rejected
 3. Use the value of fulfilled promise or provide a rejection reason for rejected promise. 
 
+Promise.all() : can take an array of promises
+its all yes or all no function.
+if one promise fails, it throws and error.
+
+Promise.all([
+    fetch('user/45'),
+    fetch('posts/user/45')
+])
 After the value is availble to consume:
 then()
 catch()
@@ -112,6 +120,18 @@ Build into the browser
 fetch('api.com')
     .then(//do something)
     .then(//do something else)
+--------------------
+fetch takes a second parament for posting data
+fetch('api.com', {
+    method: 'POST',
+    headers: {
+        'Content-Type':'application.json'
+    },
+    body: {name, email}
+})
+---------
+methods for fetch calls
+Post, delete, put, get, patch
 
 =================
 async await
