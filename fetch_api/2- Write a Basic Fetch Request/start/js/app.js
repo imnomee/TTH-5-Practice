@@ -5,13 +5,25 @@ const form = document.querySelector('form');
 // ------------------------------------------
 //  FETCH FUNCTIONS
 // ------------------------------------------
-fetchData('https://dog.ceo/api/breeds/image/random').then((data) =>
-    generateImage(data.message)
-);
+Promise.all([
+    fetchData('https://dog.ceo/api/breeds/image/random'),
+    fetchData('https://dog.ceo/api/breeds/list'),
+]).then((data) => {
+    console.log(data);
+    const breedList = data[1].message;
+    const image = data[0].message;
 
-fetchData('https://dog.ceo/api/breeds/list').then((data) =>
-    generateOptions(data.message)
-);
+    generateOptions(breedList);
+    generateImage(image);
+});
+
+// fetchData('https://dog.ceo/api/breeds/image/random').then((data) =>
+//     generateImage(data.message)
+// );
+
+// fetchData('https://dog.ceo/api/breeds/list').then((data) =>
+//     generateOptions(data.message)
+// );
 
 // ------------------------------------------
 //  HELPER FUNCTIONS
