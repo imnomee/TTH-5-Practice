@@ -103,7 +103,15 @@ finally(() => event.target.remove())
 ================
 Fetch API
 
+Easy to use and understand
+completely promise based
+Cleaner, simpler codes
+Build into the browser
+
+
 fetch('api.com')
+    .then(//do something)
+    .then(//do something else)
 
 =================
 async await
@@ -119,3 +127,4 @@ async function fetchData(url) {
 3. pausing the execution will not cause any blocking behaviour
 4. await is only valid inside functions marked with async
 5. await outside the async will cause syntax error
+
