@@ -1,7 +1,11 @@
-function getCountries(url) {
-    fetch(url)
-        .then((res) => res.json())
-        .then(displayCountries);
+async function getCountries(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Something went wrong');
+        const data = await response.json().then(displayCountries);
+    } catch (error) {
+        console.log(error);
+    }
 }
 //1. Create an async function called getCountries
 //  - retrieve the name, capital, population and flags for all countries.
